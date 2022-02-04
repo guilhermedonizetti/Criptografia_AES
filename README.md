@@ -20,10 +20,16 @@ $SQL = "SELECT AES_decrypt(Us.login, Ch.chave) as login, AES_decrypt(Us.senha, C
 $SQL .= "FROM usuario Us INNER JOIN  chaves Ch ON Us.id = Ch.id_usuario";
 ```
 
-<b>Resultados:</b> o resultado da criptografia AES é visivelmente mais complexo que o de outros métodos como MD5, Base64 e outros. Abaixo apresenta-se um valor usado no teste como texto puro, o resultado da criptografia desse texto em outros métodos e por fim o resultado forte do AES:<br>
+<b>Resultados:</b> o resultado da criptografia AES é visivelmente mais complexo que o de outros métodos como MD5, Base64 e outros. Abaixo apresenta-se um valor usado no teste como texto puro, o resultado da criptografia desse texto em outros métodos e por fim o resultado forte do AES:<br><br>
 :arrow_right: Texto puro:</b> meuemail@mail.com<br>
 :arrow_right: MD5: </b>cb7ca2fdc9159d5bc027a07bedf47ee9<br>
 :arrow_right: SHA1: </b>a5332af4907ed111fcda0c70779ecbea90dd7f19<br>
 :arrow_right: Base64: </b>bWV1ZW1haWxAbWFpbC5jb20=<br>
 :arrow_right: AES: </b>G78j1&H%AB1%%&HABKla*19D!Xj!q8*x<br>
 </ul>
+
+<br>
+
+<p align="center">
+  <b>AES, PHP, SQL.</b><br>Guilherme Donizetti - 2022.
+</p>
