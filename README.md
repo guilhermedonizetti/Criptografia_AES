@@ -5,19 +5,19 @@
 
 Um registro criptografado com AES é basicamente assim:<br>
 ```sql
-"INSERT INTO tabela(campo) VALUES( AES_encrypt(valor_campo, chave) )"
+INSERT INTO tabela(campo) VALUES( AES_encrypt(valor_campo, chave) )
 ```
 
 Para consultar a inserção acima, seria:<br>
 ```sql
-"SELECT AES_decrypt(coluna_campo, chave) as campo FROM tabela"
+SELECT AES_decrypt(coluna_campo, chave) as campo FROM tabela
 ```
 
 Porque informamos a mesma chave para criptografar e decriptografar, existe uma tabela para guardar as chaves, relacionando com os registros dos usuários e na busca dos dados é usado INNER JOIN entre as duas tabelas, dessa forma:<br>
 
 ```php
-$SQL = "INSERT INTO usuario(login, senha, tms_cadastro) ";
-$SQL .= "VALUES( AES_encrypt(?, '".$key."'), AES_encrypt(?, '".$key."'), ?)";
+$SQL = "SELECT AES_decrypt(Us.login, Ch.chave) as login, AES_decrypt(Us.senha, Ch.chave) as senha ";
+$SQL .= "FROM usuario Us INNER JOIN  chaves Ch ON Us.id = Ch.id_usuario";
 ```
 
 <b>Resultados:</b> o resultado da criptografia AES é visivelmente mais complexo que o de outros métodos como MD5, Base64 e outros. Abaixo apresenta-se um valor usado no teste como texto puro, o resultado da criptografia desse texto em outros métodos e por fim o resultado forte do AES:<br>
