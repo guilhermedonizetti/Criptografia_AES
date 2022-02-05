@@ -1,6 +1,9 @@
 <h1 align='center'>Criptografia_AES</h1>
 <p align='center'>Registro de dados usando a criptografia AES no PHP e SQL :lock:</p>
 
+[![Medium Badge](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://guilhermedonizettiads.medium.com/aes-e-php-criptografia-de-dados-292353e38ba2/)
+
+
 <b>Objetivo: </b>criptografar os registros enviados para o banco de dados com AES (<i>Advanced Encryption Standard</i>). Essa técnica utiliza uma chave para crifrar e decifrar valores, com isso, está implementado a geração randômica de chaves para os registros de usuários, e o armazenamento das chaves.
 
 Um registro criptografado com AES é basicamente assim:<br>
